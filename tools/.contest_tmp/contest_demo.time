@@ -1,0 +1,4 @@
+Demo.when_order_ammount_exceeds_1000_should_ship_for_free | 1
+Demo.when_order_ammount_exceeds_1000_should_ship_for_free_ | 0
+Demo.should_throw_when_accessing_members_on_null_pointers | 1
+Demo.basic_math | 0
