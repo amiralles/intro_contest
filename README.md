@@ -52,3 +52,11 @@ This project is structured in a way that allows you to start wirting test right 
 #### Further steps
 Once you are conftable writing tests I recommend to spend some time playing with the console. Take a look at **tools/runtest.sh** and try to modify the command to filter some test, run only failing tests, see slow tests and so on and so fort. (You can see the whole list of commands at https://github.com/amiralles/contest)
 
+#### For Windows Users
+If your are running on Windows, in order to compile the source code you should use **csc** instead of **mcs** and of course run the .exe directly (No need for mono there).
+
+
+
+
+
+
