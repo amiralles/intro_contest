@@ -3,6 +3,7 @@ This repo contains a bare minimum project that you can fork to start playing wit
 
 #### About the source code
 Within the **src** directory you will find **contest_demo.cs**. That file contains a couple of examples on how to write tests using contest. It's not a complete list of its features by any mean, is just a starting point to allow you write some tests without configuring anything.
+
 (\* you can find more examples and the API documentation at https://github.com/amiralles/contest)
 
 ```
@@ -36,7 +37,7 @@ class Demo {
 ```
 
 #### How To Build
-Go to the **src** directory and run **bash build.sh**. If everything goes well, you should get an assembly called **contest\_demo.dll** into the **bin** directory. Now you can start running tests.
+Go to the **src** directory and run **bash build.sh**. If everything goes well, you should get an assembly called **contest\_demo.dll** into the **bin** directory at the root of the project. Now you can start running tests.
 
 
 #### How To Run Tests
