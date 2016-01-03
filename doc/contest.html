@@ -1,17 +1,17 @@
+	
 <h2>Intro</h2>
-In this article I'll give you a short introduction to <b>contest</b>, a new testing framework for .NET. I'll highlight its main features and provide some links for those who want's to get their hands dirty. <br/>
+In this short article I'll give you a brief introduction to <b>contest</b>, a new testing framework for .NET. I'll highlight its main features, advantages over existing frameworks and provide some links for those who want's to get their hands dirty. <br/>
+This isn't, by any means, a complete guide or a walkthru on how to use contest. If you want to see a complete guide, you should go to <a href="https://github.com/amiralles/contest">contest's main page on github</a> or to  <a href="https://github.com/amiralles/intro_contest">intro to contest</a>, for a walkthru on how to create, build and run tests using this framework.
 
 <h2>Backgroud</h2> 
-I asumme that the reader have some working experience with at least one mayor unit testing framework.
+I asumme that the reader have some working experience with at least one mayor unit testing framework (Being NUnit, MSTest, and alike).
 
 <h2>What is contest</h2>
-Contest is a minimalist convention based testing framework for .NET. It's open source software (licensed under MIT license) and runs on Linux, Mac and Windows. It comes bundled with a fast console test runner and supports a wide range of testing styles that go from fluent assertions to BDD and everything in between.
+Contest is a minimalist, convention based, testing framework for .NET. It's open source software (under MIT license) and runs on Linux, Mac and Windows. It comes bundled with a fast console test runner and supports a wide range of testing styles that go from fluent assertions to BDD and everything in between.
 
-Its syntax is short and rigth to the point, which (in some cases) allows you to write test cases that can be readen by end users.
-
-<b>Here is an example of that: </b>
+Its syntax is short and rigth to the point, which (in some cases) allows you to write test cases that can be readen by end users. Down below you can see an example of that:
 <pre>
-	// Fluent Assertion
+	// Fluent Assertions
 	_ when_order_ammount_exceeds_1000_shipping_cost_should_be_free = 
 		assert => That(ThousandDollarsOrder.ShippingCost).Is(0);
 
@@ -20,53 +20,62 @@ Its syntax is short and rigth to the point, which (in some cases) allows you to 
 		expect => ThousandDollarsOrder.ShippingCost.ToBe(0)
 
 	// * note: I'm using one liners for the sake of brevity.
-<pre>
+</pre>
 
 <h2>Advantages over other testing frameworks</h2>
-	* It's conventions based, so no noisy annotations needed.
-	* Multiple testing styles right out of the box (Fluent, BDD, etc..).
-	* Flexible console test runner.
-	* Assembly level initialization.
-
-<h2>Want to start hacking right away?</h2>
-That great! Just go to <a href="https://github.com/amiralles/intro_contest">Contest's introduction page on github</a>. There, you will find a starting project that will let you <<b> try contests without install or configue anything</b>. Just fork the repo and follow the instructions.
+<ul>
+	<li>It's conventions based, so no noisy annotations needed.</li>
+	<li>Multiple testing styles right out of the box (Fluent, BDD, etc..).</li>
+	<li>Flexible console test runner.</li>
+	<li>Assembly level setup/teardown.</li>
+	<li>Lightweight</li>
+</ul>
 
 <h2>Who uses contest</h2>
-Most contest users are .NET devs working on Linux and Mac, coding in Text Editors (like Vi or Sublime) and using mono as their primary runtime. Of course most applications are deployed to production environments running Windows, but as of now, the console test runner is really slow on Windows systems (about 10x slower compared to Ubuntu ot OSX 10). I'm working on that, lets see how it goes... 
+Most contest's users are .NET devs working on Linux and Mac, doing their code on Text Editors (like Vi or Sublime) and using mono as their primary runtime. Of course most applications are deployed to production environments running Windows, but as of now, the console test runner is really slow on Windows systems (about 10x slower compared to Ubuntu ot OSX 10). I'm working on that, lets see how it goes... 
 
 <h2>Why do we need another testing framework</h2>
 If your are running on Windows, using Visual Studio, ReSharper and all that stuff, you probably don't need another testing framework. I've been using NUnit for more than a decade by now, and it's a great peace of software. Altough if you are doing .NET on Linux, working with Vi (or any second class editor available on that platform ;)) you may find in contest a more flexible alternative to NUnit, which in my opinion, was designed to be used from GUI runners. (I know about the NUnitConsole, but in my experince is completely fine for build servers but not so good for Red, Green, Refactor cicles). 
 
 Another aspect a like a lot about constest is the syntax, when working with text editors, consice syntax is king. 
 
-<h2>Console test runner highlights<h2>
+<h2>Console test runner highlights</h2>
 <ul>
-	<li> ReRun failing tests </li>
 	<li> Wildcard filtering </li> 
-	<li> List failing tests </li> 
+	<li> Re-Run failing tests </li>
 	<li> Find slow tests </li> 
+	<li> It's easy to attach to the Visual Studio's Debugger. </li> 
+	<li> List failing tests </li> 
 </ul>
 
 <h2> Limitations </h2>
 <ul>
-	<li> Lacks of Visual Studio integration (Hence, no debugger).  </li>
+	<li> Lacks of Visual Studio integration (Hence, no debugger out of the box).  </li>
 	<li> Lacks of GUI runners.  </li>
 	<li> Small user base.  </li>
+	<li> Altough you can debgug your tests, it's a craftman process (Attach by hand only).  </li>
 </ul>
 
 <h2>How do I get Contest?</h2>
-You can get contest from nuget or github. Altough if you want the latest and greatest, you should always go github.
+You can get contest from <a href="www.nuget.org/packages/Contest/">nuget</a> or <a href="https://github.com/amiralles/contest">github</a>.<br/>
+Altough, if you want the latest and greatest, you should <a href="https://github.com/amiralles/contest">github</a> straight.
 
-<h2>Where should I go if I wanna know more about contest?</h2>
-As of now, all of the action happens on <a href="https://github.com/amiralles/contest">github</a> . That's the place you should go.
+<h2>Want to know more about contest?</h2>
+As of now, all of the action happens on <a href="https://github.com/amiralles/contest">github</a> . That's the placece to go.
 
-<h2>Is contest the ultimate test framework?</h2>
-No is not. Is just alternative for those doing .NET on UNIX systems. While it can be used on Windows, I guess the lack of Visual Studio integration or GUI runners, is be a no go for most .NET Devs. (Which is completely fine, it would be a no go for me too about year ago).
+<h2>Is contest the ultimate testing framework?</h2>
+No is not. Is just alternative for those doing .NET on UNIX systems. While it can be used on Windows, I guess the lack of Visual Studio integration or GUI runners, is a no go for most .NET Devs. (Which is completely fine, not so long ago it would be a deal breaker for me, too).
 
 <h2>License</h2>
-Contest is licensed under MIT. Which in short means give me credit, not liavility.
+Contest is licensed under MIT. Which in short means give me credit not liavility.
 
+<h2>Want to start hacking right away?</h2>
+	That great! Just go to <a href="https://github.com/amiralles/intro_contest">Contest's intro page on github</a>. There, you will find a starting project that will let you <b> try contests without install or configue anything</b>. Just fork the repo and follow the instructions.
 
+<h2>Disclaimer</h2>
+Keep in mind this is alpha software. If you enjoy being on the bleading edge, you will be more than fine. But if you are looking for a rock solid, bullet proof, stable version, you may have to wait a couple of months for that.
+
+<br/>
+<br/>
 <b>Thank's for reading and let me know if you have any question.</b>
-
 
