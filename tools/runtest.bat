@@ -1,1 +1,1 @@
-Contest.exe run ../bin/contest_demo.dll
+Contest.exe  run ../bin/contest_demo.dll
