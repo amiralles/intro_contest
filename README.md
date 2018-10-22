@@ -12,11 +12,11 @@ class Demo {
 	static Order ThousandDollarsOrder = new Order { Ammount = 1000 };
 
 	// Fluent Assertion.
-	_ when_order_ammount_exceeds_1000_should_ship_for_free = 
+	_ when_order_ammount_exceeds_999_should_ship_for_free = 
 		ensure => That(ThousandDollarsOrder.ShippingCost).Is(0d);
 
 	// BDD style.
-	_ when_order_ammount_exceeds_1000_should_ship_for_free_ = 
+	_ when_order_ammount_exceeds_999_should_ship_for_free_ = 
 		expect => ThousandDollarsOrder.ShippingCost.ToBe(0d);
 
 	// Verify Exceptions.
